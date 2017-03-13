@@ -1,17 +1,18 @@
-class SessionController < ApplicationController
+class SessionsController < ApplicationController
   def create
     user = User.find_by(email: params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      redirect_to portfolios_path
+      redirect_to '/'
     else
-      redirect_to login_path
+      @errors = ['Invalid email/password']
+      render 'new'
     end
   end
 
   def logout
     session[:user_id] = nil
-    redirect_to login_path
+    redirect_to '/'
   end
 
 end
