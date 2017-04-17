@@ -51,3 +51,13 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'yahoo-finance'
+gem 'stock_quote'
+
+gem 'react-rails'
+# gem 'chartkick', '~> 2.2.2'
+# gem 'groupdate', '~> 3.2.0'
+# gem 'active_median', '~> 0.1.4'
+#
+# gem 'better_errors'
