@@ -1,10 +1,15 @@
 class PortfoliosController < ApplicationController
+  # def index
+  #   require_user
+  # end
+
   def new
     @portfolio = Portfolio.new
   end
 
   def create
-    @portfolio = Portfolio.new(user_params)
+    # @portfolio = current_user.portfolios.new(portfolio_params)
+    @portfolio = Portfolio.new(portfolio_params)
     if @portfolio.save
       redirect_to '/'
     else
@@ -12,4 +17,9 @@ class PortfoliosController < ApplicationController
       render 'new'
     end
   end
+
+  private
+    def portfolio_params
+      params.require(:portfolio).permit(:name)
+    end
 end
