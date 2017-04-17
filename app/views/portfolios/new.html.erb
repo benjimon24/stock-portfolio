@@ -1,0 +1,15 @@
+<h1> New Portfolio </h1>
+
+<%= form_for @portflio do |f| %>
+
+  <%= render partial: '/partials/errors' %>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.submit "Create Portfolio" %>
+  </p>
+<% end %>
