@@ -1,7 +1,10 @@
 class PortfoliosController < ApplicationController
-  # def index
-  #   require_user
-  # end
+include UsersHelper
+
+  def index
+    require_user
+    @portfolios = current_user.portfolios
+  end
 
   def new
     @portfolio = Portfolio.new

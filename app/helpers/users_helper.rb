@@ -8,7 +8,7 @@ module UsersHelper
   end
 
   def require_user
-    redirect_to '/session/login' unless current_user
+    redirect_to login_path unless current_user
   end
 
   def authorized?
@@ -16,6 +16,6 @@ module UsersHelper
   end
 
   def authorize_user
-    redirect_to '/' unless authorized?
+    redirect_to root unless authorized?
   end
 end

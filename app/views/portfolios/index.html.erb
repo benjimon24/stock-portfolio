@@ -1,1 +1,8 @@
-testing!
+
+<%= link_to "New Portfolio", new_portfolio_path %>
+
+<div>
+  <% @portfolios.each do |portfolio| %>
+    <%= portfolio.name %>
+  <% end %>
+</div>
