@@ -8,8 +8,8 @@ class PortfoliosController < ApplicationController
   end
 
   def create
-    # @portfolio = current_user.portfolios.new(portfolio_params)
-    @portfolio = Portfolio.new(portfolio_params)
+    @portfolio = current_user.portfolios.new(portfolio_params)
+    # @portfolio = Portfolio.new(portfolio_params)
     if @portfolio.save
       redirect_to '/'
     else
