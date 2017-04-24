@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :users, only: [:new, :create]
-  resources :portfolios, except: [:edit, :update]
+  resources :portfolios
 
   root 'portfolios#index'
   get 'login', to: 'sessions#new'
