@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resources :portfolios
+  resources :stocks, only: [:show]
 
   root 'portfolios#index'
   get 'login', to: 'sessions#new'

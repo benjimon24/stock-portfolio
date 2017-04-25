@@ -1,5 +1,5 @@
 class Stock < ApplicationRecord
-  validates :name, :buy_price, :volume, :symbol, presence: true
+  validates :symbol, :buy_price, :volume, presence: true
   belongs_to :portfolio
 
   def current_price

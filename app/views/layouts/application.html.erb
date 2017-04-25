@@ -11,6 +11,7 @@
   <body>
     <header>
       <% if current_user %>
+        <%= current_user.username %>
         <%= link_to "Home", portfolios_path %>
         <%= link_to "Logout", logout_path, method: :delete %>
       <% else %>
