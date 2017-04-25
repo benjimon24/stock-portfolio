@@ -4,6 +4,10 @@
   <% @portfolios.each do |portfolio| %>
     <div class='portfolio'>
       <%= link_to portfolio.name, portfolio_path(portfolio.id) %> <br>
+      Current Value: <%= portfolio.current_value %> <br>
+      Cost Basis: <%= portfolio.cost_basis %> <br>
+      Change: <%= portfolio.net_profit %> <br>
+      Change%: <%= portfolio.percent_change %> <br>
       <%= link_to "Rename", edit_portfolio_path(portfolio.id) %>
       <%= link_to "Delete", {action: "destroy", id: portfolio.id},
       method: :delete, data: { confirm: "Are you sure you want to delete this portfolio?" } %> <br>
