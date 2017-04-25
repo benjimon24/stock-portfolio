@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :portfolios
   resources :stocks, only: [:show]
 
+  post 'stocks/search', to: 'stocks#search', as: "search"
   root 'portfolios#index'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'

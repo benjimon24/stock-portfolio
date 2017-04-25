@@ -1,0 +1,7 @@
+<h1>Here are your search results:</h1>
+
+<% if !@response.empty? %>
+  <% @response.each do |company|%>
+    <%= link_to "#{company["company_name"]}", stock_path(company["company_symbol"]) %> <br>
+  <% end %>
+<% end %>
