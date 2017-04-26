@@ -1,18 +1,14 @@
 class StocksController < ApplicationController
+  include StocksHelper
+  include UsersHelper
 
   def search
-    root =  "https://stocksearchapi.com/api/?search_text=#{params[:id]}&api_key=#{api_key}"
-    @response = JSON.parse(Net::HTTP.get(URI(root)))
-    # binding.pry
-    # if @response.empty?
-    #   @response = ["No results found."]
-    # else
-    #   render json: @response
-    # end
+    @response = parse(params[:id])
   end
 
   def show
     @stock = StockQuote::Stock.json_quote(params[:id])["quote"]
+    @portfolios = portfolios_with(params[:id])
   end
 
   private

@@ -1,4 +1,20 @@
 <%= @stock['Name']%> (<%=@stock['symbol']%>)<br>
+Open: <%= @stock['Open'] %> <br>
 Ask Price: <%= @stock['Ask'] %> <br>
+Bid Price: <%= @stock['Bid'] %> <br>
+Days Low: <%= @stock['DaysLow'] %> <br>
+Days High: <%= @stock['DaysHigh'] %> <br>
+Year Low: <%= @stock['YearLow'] %> <br>
+Year High: <%= @stock['YearHigh'] %> <br>
 Change: <%= @stock['Change']%> <br>
 Change%: <%= @stock['PercentChange']%> <br>
+
+<h1>Here are your portfolios containing this stock:</h1>
+<% @portfolios.each do |portfolio| %>
+  <div>
+    <%= portfolio.name %> <br>
+    <% stock= portfolio.stocks.find_by(symbol: "#{@stock['symbol']}") %>
+    Purchase Price: <%= stock.buy_price %> <br>
+    Number of Shares: <%= stock.volume %> <br>
+  </div>
+<% end %>
