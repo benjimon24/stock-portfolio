@@ -9,20 +9,22 @@
   </head>
 
   <body>
-    <header>
+    <nav>
+      <div class="title"> Portfolio Helper </div>
       <% if current_user %>
-        <%= current_user.username %>
+        <%= current_user.username %> <br>
         <%= link_to "Home", portfolios_path %>
         <%= link_to "Logout", logout_path, method: :delete %>
-        <%= form_tag(search_path, method: "post") do %>
-          <%= text_field_tag(:id) %>
-          <%= submit_tag("Search") %>
-        <% end %>
       <% else %>
         <%= link_to "Login", login_path %>
         <%= link_to "Sign Up", new_user_path %>
       <% end %>
-    </header>
+
+      <%= form_tag(search_path, method: "post", class: "search-bar") do %>
+        <%= text_field_tag(:id) %>
+        <%= submit_tag("Search") %>
+      <% end %>
+    </nav>
     <%= yield %>
   </body>
 </html>

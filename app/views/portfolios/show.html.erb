@@ -5,13 +5,13 @@ Change: <%= @portfolio.net_profit %> <br>
 Change%: <%= @portfolio.percent_change %> <br>
 
 <% @portfolio.stocks.each do |stock| %>
-  <div class="stock-info">
+  <div class="block">
     <%= link_to "#{stock.symbol}", stock_path(stock.symbol) %> <br>
-    Current Price: <%= stock.current_price %> <br>
-    Volume: <%= stock.volume %> <br>
-    Total Value: <%= stock.current_value %> <br>
-    Cost Basis: <%= stock.cost_basis %> <br>
-    Change: <%= stock.net_profit %> <br>
+    Current Price: $<%= stock.current_price %> <br>
+    Number of Shares: <%= stock.volume %> <br>
+    Total Value: $<%= stock.current_value %> <br>
+    Cost Basis: $<%= stock.cost_basis %> <br>
+    Change: $<%= stock.net_profit %> <br>
     Change%: <%= stock.percent_change %> <br>
   </div>
 <% end %>

@@ -2,7 +2,7 @@
 
 <div class="portfolio-list">
   <% @portfolios.each do |portfolio| %>
-    <div class='portfolio'>
+    <div class='block'>
       <%= link_to portfolio.name, portfolio_path(portfolio.id) %> <br>
       Current Value: <%= portfolio.current_value %> <br>
       Cost Basis: <%= portfolio.cost_basis %> <br>

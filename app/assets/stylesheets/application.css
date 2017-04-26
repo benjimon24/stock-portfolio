@@ -13,3 +13,49 @@
  *= require_tree .
  *= require_self
  */
+
+html {
+
+}
+
+nav {
+  background-color: #6495ED;
+  height: 60px;
+  padding: 10px;
+  text-align: right;
+  color: white;
+  font-size: 18px;
+}
+
+.nav :visited {
+  color: white;
+}
+
+.nav :link {
+  color: white;
+}
+
+.title {
+  float: left;
+  font-size: 30px;
+}
+
+.search-bar {
+}
+
+.block {
+  display: inline-block;
+  background-color: grey;
+  border-radius: 10%;
+  padding: 20px;
+  margin: 20px;
+  color: white;
+}
+
+.block :link {
+  color: white;
+}
+
+.block :visited {
+  color: white;
+}

@@ -1,9 +1,11 @@
 <h1>Here are your search results:</h1>
 
-<% if @response %>
-  <% @response.each do |company|%>
-    <%= link_to "#{company["company_name"]}", stock_path(company["company_symbol"]) %> <br>
-  <% end %>
-<% else %>
+<div class="search-results">
+  <% if @response %>
+    <% @response.each do |company|%>
+      <%= link_to "#{company["company_name"]}", stock_path(company["company_symbol"]) %> <br>
+      <% end %>
+  <% else %>
     No search results found.
-<% end %>
+  <% end %>
+</div>
