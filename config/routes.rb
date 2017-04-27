@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resources :portfolios
-  resources :stocks, only: [:show]
+  resources :stocks, only: [:new, :show]
 
+  get 'stocks/buy', to: 'stocks#new', as: 'new'
+  post 'stocks/buy', to: 'stocks#buy', as: 'buy'
   post 'stocks/search', to: 'stocks#search', as: "search"
   root 'portfolios#index'
   get 'login', to: 'sessions#new'

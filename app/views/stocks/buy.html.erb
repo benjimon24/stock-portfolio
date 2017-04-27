@@ -1,0 +1,15 @@
+<h1> Buy Stocks </h1>
+
+<%= form_for @stock do |f| %>
+
+  <%= render partial: '/partials/errors' %>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.number_field :name %>
+  </p>
+
+  <p>
+    <%= f.submit "Buy" %>
+  </p>
+<% end %>

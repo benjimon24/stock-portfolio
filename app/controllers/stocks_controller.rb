@@ -2,13 +2,23 @@ class StocksController < ApplicationController
   include StocksHelper
   include UsersHelper
 
+  def new
+    @stock = Stock.new
+    @stock_info = StockQuote::Stock.json_quote(params[:id])["quote"]
+  end
+
   def search
     @response = parse(params[:id])
   end
 
   def show
     @stock = StockQuote::Stock.json_quote(params[:id])["quote"]
+    @stock = nil unless @stock['Name']
     @portfolios = portfolios_with(params[:id])
+  end
+
+  def buy
+
   end
 
   private

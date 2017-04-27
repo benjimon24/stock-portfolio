@@ -1,8 +1,11 @@
-<%= @portfolio.name %> <br>
-Current Value: <%= @portfolio.current_value %> <br>
-Cost Basis: <%= @portfolio.cost_basis %> <br>
-Change: <%= @portfolio.net_profit %> <br>
-Change%: <%= @portfolio.percent_change %> <br>
+<div class="info">
+  <%= @portfolio.name %> <br>
+  Current Value: <%= @portfolio.current_value %> <br>
+  Cost Basis: <%= @portfolio.cost_basis %> <br>
+  Change: <%= @portfolio.net_profit %> <br>
+  Change%: <%= @portfolio.percent_change %> <br>
+</div>
+
 
 <% @portfolio.stocks.each do |stock| %>
   <div class="block">

@@ -1,6 +1,7 @@
-<h1> Sign Up </h1>
+<div class="form">
+  <h1> Sign Up </h1>
 
-<%= form_for @user do |f| %>
+  <%= form_for @user do |f| %>
 
   <%= render partial: '/partials/errors' %>
 
@@ -22,4 +23,6 @@
   <p>
     <%= f.submit "Sign Up" %>
   </p>
-<% end %>
+  <% end %>
+
+</div>

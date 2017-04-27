@@ -1,21 +1,23 @@
-<h1> Log in </h1>
+<div class="form">
+  <h1> Log in </h1>
 
-<%= form_for :session, url: login_path do |f| %>
+  <%= form_for :session, url: login_path do |f| %>
 
-  <%= render partial: '/partials/errors' %>
+    <%= render partial: '/partials/errors' %>
 
-  <p>
-    <%= f.label :email %><br>
-    <%= f.email_field :email %>
-  </p>
+    <p>
+      <%= f.label :email %><br>
+      <%= f.email_field :email %>
+    </p>
 
-  <p>
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-  </p>
+    <p>
+      <%= f.label :password %><br>
+      <%= f.password_field :password %>
+    </p>
 
-  <p>
-    <%= f.submit "Login" %>
-  </p>
+    <p>
+      <%= f.submit "Login" %>
+    </p>
 
-<% end %>
+  <% end %>
+</div>
