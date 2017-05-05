@@ -5,6 +5,10 @@ class StocksController < ApplicationController
   def new
     @stock = Stock.new
     @stock_info = StockQuote::Stock.json_quote(params[:id])["quote"]
+    @list_of_portfolios = current_user.portfolios.map {|portfolio| portfolio.name}
+  end
+
+  def buy
   end
 
   def search
@@ -15,10 +19,6 @@ class StocksController < ApplicationController
     @stock = StockQuote::Stock.json_quote(params[:id])["quote"]
     @stock = nil unless @stock['Name']
     @portfolios = portfolios_with(params[:id])
-  end
-
-  def buy
-
   end
 
   private

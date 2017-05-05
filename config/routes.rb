@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   resources :portfolios
   resources :stocks, only: [:new, :show]
 
-  get 'stocks/buy', to: 'stocks#new', as: 'new'
-  post 'stocks/buy', to: 'stocks#buy', as: 'buy'
+  get 'stocks/:id/buy', to: 'stocks#new', as: 'new'
+  post 'stocks/:id/buy', to: 'stocks#buy', as: 'buy'
   post 'stocks/search', to: 'stocks#search', as: "search"
   root 'portfolios#index'
   get 'login', to: 'sessions#new'

@@ -1,0 +1,16 @@
+<h1> Buy Stocks </h1>
+
+
+
+  <%= render partial: '/partials/errors' %>
+
+    <%= form_for @stock, as: "buy", :url => "/stocks/#{@stock_info["symbol"]}/buy" do |f| %>
+    <p>
+        <%= f.label :quantity %><br>
+        <%= f.number_field :quantity %>
+      </p>
+
+      <p>
+        <%= f.submit "Buy" %>
+      </p>
+    <% end %>

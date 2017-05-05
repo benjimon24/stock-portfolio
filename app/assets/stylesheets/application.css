@@ -29,7 +29,7 @@ nav {
   font-size: 18px;
 }
 
-nav :link, :visited {
+nav > a:link, nav > a:visited {
   color: white;
   text-decoration: none;
 }
