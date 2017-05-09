@@ -7,15 +7,15 @@ class Stock < ApplicationRecord
   end
 
   def current_value
-    current_price * volume
+    (current_price * volume).round(2)
   end
 
   def cost_basis
-    volume * buy_price
+    (volume * buy_price).round(2)
   end
 
   def net_profit
-    current_value - cost_basis
+    (current_value - cost_basis).round(2)
   end
 
   def percent_change
@@ -23,9 +23,9 @@ class Stock < ApplicationRecord
   end
 
   def buy(quantity)
-    total_value = cost_basis + current_price * quantity
+    total_value = (cost_basis + current_price * quantity).round(2)
     self.volume += quantity
-    self.buy_price = total_value / volume
+    self.buy_price = (total_value / volume).round(2)
   end
 
 end
