@@ -62,6 +62,15 @@ nav a:hover{
   color: white;
 }
 
+.block a {
+  font-size: 18px;
+  color: #264040;
+}
+
+.block a:hover {
+  color: #8fbcbc;
+}
+
 .info {
   display: block;
   background-color: #70a9a9;
@@ -71,13 +80,10 @@ nav a:hover{
   color: white;
 }
 
-.block a {
-  font-size: 18px;
-  color: #8fbcbc;
-}
-
-.block a:hover {
-  color: #264040;
+.info h2{
+  margin: 0px 0px 2px 0px;
+  color: #2F4F4F;
+  text-decoration: underline;
 }
 
 

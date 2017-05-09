@@ -21,6 +21,19 @@ class StocksController < ApplicationController
     end
   end
 
+  def sell
+    @stock = Stock.find(params[:id])
+    @portfolio = @stock.portfolio
+    @stock_info = StockQuote::Stock.json_quote(@stock.symbol)["quote"]
+  end
+
+  def update
+    @stock = Stock.find(params[:id])
+    @portfolio = @stock.portfolio
+    @stock.sell(stock_params['volume'].to_i)
+    redirect_to portfolio_path(@portfolio)
+  end
+
   def search
     @response = parse(params[:id])
   end

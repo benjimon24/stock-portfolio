@@ -1,8 +1,8 @@
 <% if @stock %>
   <div class="stock-info">
 
-    <div class="info">
-      <%= @stock['Name']%> (<%=@stock['symbol']%>)<br>
+    <div class="info block">
+      <h2><%= @stock['Name']%> (<%=@stock['symbol']%>)<br> </h2>
       Open: $<%= @stock['Open'] %> <br>
       Ask Price: $<%= @stock['Ask'] %> <br>
       Bid Price: $<%= @stock['Bid'] %> <br>

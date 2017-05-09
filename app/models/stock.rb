@@ -26,6 +26,16 @@ class Stock < ApplicationRecord
     total_value = (cost_basis + current_price * quantity).round(2)
     self.volume += quantity
     self.buy_price = (total_value / volume).round(2)
+    self.save
+  end
+
+  def sell(quantity)
+    if (volume - quantity) < 0
+      self.destroy
+    else
+      self.volume -= quantity
+    end
+    self.save
   end
 
 end

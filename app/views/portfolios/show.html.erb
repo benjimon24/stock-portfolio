@@ -1,5 +1,5 @@
 <div class="info">
-  <%= @portfolio.name %> <br>
+  <h2><%= @portfolio.name %> <br></h2> 
   Current Value: <%= @portfolio.current_value %> <br>
   Cost Basis: <%= @portfolio.cost_basis %> <br>
   Change: <%= @portfolio.net_profit %> <br>
@@ -16,5 +16,6 @@
     Cost Basis: $<%= stock.cost_basis %> <br>
     Change: $<%= stock.net_profit %> <br>
     Change%: <%= stock.percent_change %> <br>
+    <%= link_to "Sell", sell_path(stock) %>
   </div>
 <% end %>

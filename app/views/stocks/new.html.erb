@@ -1,26 +1,27 @@
 <h1> Buy Stock </h1>
-<%= @stock_info['Name'] %> <br>
-<%= @stock_info['symbol'] %> <br>
-Ask Price: <%= @stock_info['Ask'] %>
+<div class="info">
+  <h2> <%= @stock_info['Name'] %> (<%= @stock_info['symbol'] %>) </h2> <br>
+  Ask Price: <%= @stock_info['Ask'] %>
+</div>
 
-  <%= render partial: '/partials/errors' %>
+  <%= form_for @stock, :url => buy_path(@stock_info['symbol']) do |f| %>
 
-    <%= form_for @stock, :url => buy_path(@stock_info['symbol']) do |f| %>
+    <p>
+      Portfolio: <br>
+      <%= f.select(:portfolio_id, @portfolios) %>
+    </p>
 
-      <p>
-        Portfolio: <br>
-        <%= f.select(:portfolio_id, @portfolios) %>
-      </p>
+    <p>
+      <%= f.label :volume %><br>
+      <%= f.number_field :volume %>
+    </p>
 
-      <p>
-        <%= f.label :volume %><br>
-        <%= f.number_field :volume %>
-      </p>
+    <%= f.hidden_field(:symbol, value: @stock_info['symbol']) %>
+    <%= f.hidden_field(:buy_price, value: @stock_info['Ask']) %>
 
-      <%= f.hidden_field(:symbol, value: @stock_info['symbol']) %>
-      <%= f.hidden_field(:buy_price, value: @stock_info['Ask']) %>
+    <p>
+      <%= f.submit "Buy Stock" %>
+    </p>
+  <% end %>
 
-      <p>
-        <%= f.submit "Buy Stock" %>
-      </p>
-    <% end %>
+<%= link_to 'Back', stock_path(@stock_info['symbol']) %>
