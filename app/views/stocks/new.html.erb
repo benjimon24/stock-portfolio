@@ -1,16 +1,26 @@
-<h1> Buy Stocks </h1>
-
-
+<h1> Buy Stock </h1>
+<%= @stock_info['Name'] %> <br>
+<%= @stock_info['symbol'] %> <br>
+Ask Price: <%= @stock_info['Ask'] %>
 
   <%= render partial: '/partials/errors' %>
 
-    <%= form_for @stock, as: "buy", :url => "/stocks/#{@stock_info["symbol"]}/buy" do |f| %>
-    <p>
-        <%= f.label :quantity %><br>
-        <%= f.number_field :quantity %>
+    <%= form_for @stock, :url => buy_path(@stock_info['symbol']) do |f| %>
+
+      <p>
+        Portfolio: <br>
+        <%= f.select(:portfolio_id, @portfolios) %>
       </p>
 
       <p>
-        <%= f.submit "Buy" %>
+        <%= f.label :volume %><br>
+        <%= f.number_field :volume %>
+      </p>
+
+      <%= f.hidden_field(:symbol, value: @stock_info['symbol']) %>
+      <%= f.hidden_field(:buy_price, value: @stock_info['Ask']) %>
+
+      <p>
+        <%= f.submit "Buy Stock" %>
       </p>
     <% end %>

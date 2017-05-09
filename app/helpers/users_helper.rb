@@ -7,6 +7,10 @@ module UsersHelper
     !!current_user
   end
 
+  def require_user
+    redirect_to root unless login?
+  end
+
   def authorized?
     session[:user_id] == @portfolio.user_id
   end

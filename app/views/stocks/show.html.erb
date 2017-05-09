@@ -1,5 +1,6 @@
 <% if @stock %>
   <div class="stock-info">
+
     <div class="info">
       <%= @stock['Name']%> (<%=@stock['symbol']%>)<br>
       Open: $<%= @stock['Open'] %> <br>
@@ -11,19 +12,25 @@
       Year High: $<%= @stock['YearHigh'] %> <br>
       Change: <%= @stock['Change']%> <br>
       Change%: <%= @stock['PercentChange']%> <br>
+
+      <%= link_to "Buy", buy_path(@stock['symbol']) %>
     </div>
 
-    <h1>Here are your portfolios containing this stock:</h1>
-    <% @portfolios.each do |portfolio| %>
-    <div class="block">
-      <%= link_to portfolio.name, portfolio_path(portfolio.id) %> <br>
-      <% stock= portfolio.stocks.find_by(symbol: "#{@stock['symbol']}") %>
-      Purchase Price: $<%= stock.buy_price %> <br>
-      Number of Shares: <%= stock.volume %> <br>
-      Cost Basis: $<%= stock.cost_basis %> <br>
-    </div>
+    <% if !@portfolios.empty? %>
+      <h1>Here are your portfolios containing this stock:</h1>
+      <% @portfolios.each do |portfolio| %>
+        <div class="block">
+          <%= link_to portfolio.name, portfolio_path(portfolio.id) %> <br>
+          <% stock= portfolio.stocks.find_by(symbol: "#{@stock['symbol']}") %>
+          Purchase Price: $<%= stock.buy_price %> <br>
+          Number of Shares: <%= stock.volume %> <br>
+          Cost Basis: $<%= stock.cost_basis %> <br>
+        </div>
+      <% end %>
     <% end %>
+
   </div>
+
 <% else %>
   <h2>This stock does not exist.</h2>
 <% end %>

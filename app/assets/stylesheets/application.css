@@ -29,7 +29,7 @@ nav {
   font-size: 18px;
 }
 
-nav > a:link, nav > a:visited {
+nav > a:link, nav > a:visited, #title > a:link, #title > a:visited {
   color: white;
   text-decoration: none;
 }
@@ -38,7 +38,7 @@ nav a:hover{
   color: #8fbcbc;
 }
 
-.title {
+#title {
   float: left;
   font-size: 30px;
 }
@@ -53,6 +53,7 @@ nav a:hover{
 
 .block {
   display: inline-block;
+  vertical-align: top;
   width: 25%;
   background-color: #4d8080;
   border-radius: 10px;
