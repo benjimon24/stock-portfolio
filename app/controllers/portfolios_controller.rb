@@ -1,21 +1,15 @@
 class PortfoliosController < ApplicationController
 include UsersHelper
   before_action :find_portfolio, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, only: [:index, :new]
+  before_action :authorize_user, only: [:show, :edit]
 
   def index
-    if current_user
-      @portfolios = current_user.portfolios
-    else
-      redirect_to login_path
-    end
+    @portfolios = current_user.portfolios
   end
 
   def new
-    if current_user
-      @portfolio = Portfolio.new
-    else
-      redirect_to login_path
-    end
+    @portfolio = Portfolio.new
   end
 
   def create

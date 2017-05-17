@@ -2,6 +2,9 @@ class StocksController < ApplicationController
   include StocksHelper
   include UsersHelper
 
+  before_action :require_user, only: [:show]
+  before_action :authorize_user, only: [:new, :sell]
+
   def new
     @stock = Stock.new
     @stock_info = StockQuote::Stock.json_quote(params[:id])["quote"]
@@ -50,7 +53,7 @@ class StocksController < ApplicationController
     params.require(:stock).permit(:volume, :portfolio_id, :symbol, :buy_price)
   end
 
-    def api_key
-      "ad66629db14dad47e02a19f582436c500560afcc"
-    end
+  def api_key
+    "ad66629db14dad47e02a19f582436c500560afcc"
+  end
 end
