@@ -10,12 +10,4 @@ module UsersHelper
   def require_user
     redirect_to login_path unless login?
   end
-
-  def authorized?
-    session[:user_id] == @portfolio.user_id
-  end
-
-  def authorize_user
-    redirect_to root_path unless authorized?
-  end
 end

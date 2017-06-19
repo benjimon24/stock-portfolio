@@ -13,7 +13,9 @@
       Change: <%= @stock['Change']%> <br>
       Change%: <%= @stock['PercentChange']%> <br>
 
-      <%= link_to "Buy", buy_path(@stock['symbol']) %>
+      <% if !current_user.portfolios.empty? %>
+        <%= link_to "Buy", buy_path(@stock['symbol']) %>
+      <% end %>
     </div>
 
     <% if !@portfolios.empty? %>

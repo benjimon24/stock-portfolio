@@ -3,12 +3,12 @@ class StocksController < ApplicationController
   include UsersHelper
 
   before_action :require_user, only: [:show]
-  before_action :authorize_user, only: [:new, :sell]
 
   def new
     @stock = Stock.new
     @stock_info = StockQuote::Stock.json_quote(params[:id])["quote"]
     @portfolios = current_user.portfolios.map {|portfolio| [portfolio.name, portfolio.id]}
+    redirect_to stock_path(@stock_info['symbol']) if @portfolios.empty?
   end
 
   def buy
@@ -27,6 +27,7 @@ class StocksController < ApplicationController
   def sell
     @stock = Stock.find(params[:id])
     @portfolio = @stock.portfolio
+    redirect_to root_path unless session[:user_id] == @portfolio.user_id
     @stock_info = StockQuote::Stock.json_quote(@stock.symbol)["quote"]
   end
 

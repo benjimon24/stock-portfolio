@@ -2,7 +2,7 @@ class PortfoliosController < ApplicationController
 include UsersHelper
   before_action :find_portfolio, only: [:show, :edit, :update, :destroy]
   before_action :require_user, only: [:index, :new]
-  before_action :authorize_user, only: [:show, :edit]
+  before_action :authorize_user, only: [:show, :edit, :update]
 
   def index
     @portfolios = current_user.portfolios
