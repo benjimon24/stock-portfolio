@@ -16,6 +16,7 @@ User Stories:
 Stretch Goals:
 * I would like to see color coded gains and losses for better readability
 * I would like to have charts and graphs displaying historical data of my portfolio
+* I would like dynamic web pages that update with buy and sell fields without leaving the page
 
 
 By: Benjamin Li
