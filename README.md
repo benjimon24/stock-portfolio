@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a stock portfolio application created with Rails and React.
+* Ruby version: 2.3.1
+* BCrypt authentication
+* Uses stock_quote gem (with Yahoo! Finance API)
 
-Things you may want to cover:
+User Stories:
+* I would like to have an account that stores all my portfolios and stock positions
+* I would like to see how each portfolio is performing individually
+* I would like to see the individual stock positions of each portfolio
+* I would like to be able to sell stock from the portfolio page
+* I would like to be able to search for stocks and see information about them
+* I would like to buy stocks and choose which portfolio to put them in
 
-* Ruby version
+Stretch Goals:
+* I would like to see color coded gains and losses for better readability
+* I would like to have charts and graphs displaying historical data of my portfolio
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+By: Benjamin Li
