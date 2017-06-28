@@ -6,24 +6,36 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <nav>
-      <div id="title"> <%= link_to "Portfolio Helper", root_path %> </div>
-        <% if current_user %>
-          <%= current_user.username %> <br>
-          <%= link_to "Home", portfolios_path %>
-          <%= link_to "Logout", logout_path, method: :delete %>
-        <% else %>
-          <%= link_to "Login", login_path %>
-          <%= link_to "Sign Up", new_user_path %>
-        <% end %>
 
-        <%= form_tag(search_path, method: "post", class: "search-form") do %>
-          <%= text_field_tag(:id, nil, placeholder: "Search by Ticker", class: "search-bar")  %>
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <%= link_to "Portfolio Helper", root_path, class: "navbar-brand" %>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav ml-auto">
+          <% if current_user %>
+            <span class="nav-link active"> <%= current_user.username %></span>
+            <%= link_to "Home", portfolios_path, class: "nav-link" %>
+            <%= link_to "Logout", logout_path, method: :delete, class: "nav-link" %>
+          <% else %>
+            <%= link_to "Login", login_path, class: "nav-link" %>
+            <%= link_to "Sign Up", new_user_path, class: "nav-link" %>
+          <% end %>
+        </div>
+        <%= form_tag(search_path, method: "post", class: "search-form form-inline my-2 my-lg-0") do %>
+          <%= text_field_tag(:id, nil, placeholder: "Search by Ticker", class: "search-bar form-control mr-sm-2")  %>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         <% end %>
+      </div>
     </nav>
+
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,112 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+.button_to {
+  display: inline-block;
+}
+
+// html {
+//   margin: auto;
+//   border: 1px solid black
+// }
+
+// nav {
+  // background-color: #2F4F4F;
+//   height: 60px;
+//   padding: 10px;
+//   text-align: right;
+//   color: white;
+//   font-size: 18px;
+// }
+
+// nav > a:link, nav > a:visited, #title > a:link, #title > a:visited {
+//   color: white;
+//   text-decoration: none;
+// }
+
+// nav a:hover{
+//   color: #8fbcbc;
+// }
+
+// #title {
+//   float: left;
+//   font-size: 30px;
+// }
+//
+//
+// .search-bar {
+//   border: none;
+//   width: 120px;
+//   padding: 3px;
+//   margin-top: 5px;
+// }
+//
+// .block {
+//   display: inline-block;
+//   vertical-align: top;
+//   width: 25%;
+//   background-color: #4d8080;
+//   border-radius: 10px;
+//   padding: 15px;
+//   margin: 10px;
+//   color: white;
+// }
+//
+// .block a {
+//   font-size: 18px;
+//   color: #264040;
+// }
+//
+// .block a:hover {
+//   color: #8fbcbc;
+// }
+//
+// .info {
+//   display: block;
+//   background-color: #70a9a9;
+//   border-radius: 10px;
+//   padding: 20px;
+//   margin: 20px;
+//   color: white;
+// }
+//
+// .info h2{
+//   margin: 0px 0px 2px 0px;
+//   color: #2F4F4F;
+//   text-decoration: underline;
+// }
+//
+//
+// .form {
+//   display: inline-block;
+//   margin: 20px;
+//   border: 1px solid black;
+//   border-radius: 3px;
+//   padding: 10px;
+// }
+//
+// .button {
+//   display: inline-block;
+//   float: right;
+//   background-color: #2F4F4F;
+//   color: white;
+//   border: none;
+//   text-decoration: none;
+//   padding: 5px;
+//   border-radius: 10px;
+//   margin: 10px;
+// }
+// .button:hover {
+//   color: #8fbcbc;
+// }
