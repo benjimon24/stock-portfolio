@@ -16,7 +16,7 @@
       </tr>
       <tr>
         <th>Change%:</th>
-        <td><%= @portfolio.percent_change %>%</td>
+        <td class="percent-change"><%= @portfolio.percent_change %>%</td>
       </tr>
     </tbody>
   </table>
@@ -42,7 +42,7 @@
       <td> $<%= stock.current_value %> </td>
       <td> $<%= stock.cost_basis %> </td>
       <td>$<%= stock.net_profit %> </td>
-      <td> <%= stock.percent_change %> </td>
+      <td class="percent-change"> <%= stock.percent_change %>% </td>
       <td> <%= link_to "Sell", sell_path(stock), class: "btn btn-primary" %>
     </tr>
   <% end %>

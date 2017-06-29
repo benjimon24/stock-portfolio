@@ -16,19 +16,9 @@
   display: inline-block;
 }
 
-// html {
-//   margin: auto;
-//   border: 1px solid black
-// }
-
-// nav {
-  // background-color: #2F4F4F;
-//   height: 60px;
-//   padding: 10px;
-//   text-align: right;
-//   color: white;
-//   font-size: 18px;
-// }
+.navbar {
+  background-color: #2F4F4F;
+}
 
 // nav > a:link, nav > a:visited, #title > a:link, #title > a:visited {
 //   color: white;
@@ -45,13 +35,10 @@
 // }
 //
 //
-// .search-bar {
-//   border: none;
-//   width: 120px;
-//   padding: 3px;
-//   margin-top: 5px;
-// }
-//
+.search-bar {
+  margin-left: 5px;
+}
+
 // .block {
 //   display: inline-block;
 //   vertical-align: top;
