@@ -20,6 +20,22 @@
   background-color: #2F4F4F;
 }
 
+.search-bar {
+  margin-left: 5px;
+}
+
+.form {
+  display: inline-block;
+  margin-top: 40px;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 40px;
+}
+
+.new-portfolio {
+  margin-top: 20px;
+}
+
 // nav > a:link, nav > a:visited, #title > a:link, #title > a:visited {
 //   color: white;
 //   text-decoration: none;
@@ -35,9 +51,6 @@
 // }
 //
 //
-.search-bar {
-  margin-left: 5px;
-}
 
 // .block {
 //   display: inline-block;
@@ -74,14 +87,6 @@
 //   text-decoration: underline;
 // }
 //
-//
-// .form {
-//   display: inline-block;
-//   margin: 20px;
-//   border: 1px solid black;
-//   border-radius: 3px;
-//   padding: 10px;
-// }
 //
 // .button {
 //   display: inline-block;

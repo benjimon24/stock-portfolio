@@ -1,28 +1,31 @@
-<div class="form">
-  <h1> Sign Up </h1>
+<div class="container-fluid text-center">
+  <div class="form">
+    <h1> Sign Up </h1>
 
-  <%= form_for @user do |f| %>
+    <%= form_for @user do |f| %>
 
-  <%= render partial: '/partials/errors' %>
+    <%= render partial: '/partials/errors' %>
 
-  <p>
-    <%= f.label :username %><br>
-    <%= f.text_field :username %>
-  </p>
+    <p>
+      <%= f.label :username %><br>
+      <%= f.text_field :username %>
+    </p>
 
-  <p>
-    <%= f.label :email %><br>
-    <%= f.email_field :email %>
-  </p>
+    <p>
+      <%= f.label :email %><br>
+      <%= f.email_field :email %>
+    </p>
 
-  <p>
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-  </p>
+    <p>
+      <%= f.label :password %><br>
+      <%= f.password_field :password %>
+    </p>
 
-  <p>
-    <%= f.submit "Sign Up" %>
-  </p>
-  <% end %>
+    <p>
+      <%= f.submit "Sign Up" %>
+    </p>
+    <% end %>
+
+  </div>
 
 </div>

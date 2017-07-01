@@ -1,42 +1,48 @@
-<div class="container-fluid">
-  <%= button_to "New Portfolio", new_portfolio_path, method: 'get', class: "btn btn-primary" %>
-  <div class="portfolio-list card-deck">
-    <div class="row">
-      <% @portfolios.each do |portfolio| %>
-      <div class='col-sm-6 col-md-4'>
-        <div class="card my-3">
-          <div class="card-block">
-            <h4 class="card-title"><%= link_to portfolio.name, portfolio_path(portfolio.id) %></h4>
-            <table class="table table-striped table-condensed">
-              <tbody>
-                <tr>
-                  <th>Current Value:</th>
-                  <td>$<%= portfolio.current_value %></td>
-                </tr>
-                <tr>
-                  <th>Cost Basis:</th>
-                  <td>$<%= portfolio.cost_basis %></td>
-                </tr>
-                <tr>
-                  <th>Change:</th>
-                  <td>$<%= portfolio.net_profit %></td>
-                </tr>
-                <tr>
-                  <th>Change%:</th>
-                  <td class="percent-change"><%= portfolio.percent_change %>%</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+<script src="/js/application.js"></script>
 
-          <div class="card-footer">
-            <%= link_to "Rename", edit_portfolio_path(portfolio.id), class: "btn btn-primary" %>
-            <%= link_to "Delete", {action: "destroy", id: portfolio.id},
-            method: :delete, class: "btn btn-primary", data: { confirm: "Are you sure you want to delete this portfolio?"} %>
-          </div>
+<div class="container-fluid">
+  <%= button_to "New Portfolio", new_portfolio_path, method: 'get', class: "btn btn-primary new-portfolio" %>
+  <div class="row">
+    <% @portfolios.each do |portfolio| %>
+    <div class="col-sm-6 col-md-4">
+      <div class="card my-3">
+        <div class="card-header">
+          <h4 class="card-title"><%= link_to portfolio.name, portfolio_path(portfolio.id) %></h4>
+        </div>
+
+        <div class="card-block">
+          <table class="table table-striped table-condensed">
+            <tbody>
+              <tr>
+                <th>Current Value:</th>
+                <td>$<%= portfolio.current_value %></td>
+              </tr>
+              <tr>
+                <th>Cost Basis:</th>
+                <td>$<%= portfolio.cost_basis %></td>
+              </tr>
+              <tr>
+                <th>Change:</th>
+                <td>$<%= portfolio.net_profit %></td>
+              </tr>
+              <tr>
+                <th>Change%:</th>
+                <td class="percent-change"><%= portfolio.percent_change %>%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card-footer">
+          <%= link_to "Rename", edit_portfolio_path(portfolio.id), class: "btn btn-primary" %>
+          <%= link_to "Delete", {action: "destroy", id: portfolio.id},
+          method: :delete, class: "btn btn-primary", data: { confirm: "Are you sure you want to delete this portfolio?"} %>
         </div>
       </div>
-      <% end %>
+
     </div>
+    <% end %>
+
   </div>
+
 </div>

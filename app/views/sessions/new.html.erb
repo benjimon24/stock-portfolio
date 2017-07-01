@@ -1,7 +1,8 @@
-<div class="form">
-  <h1> Log in </h1>
+<div class="container-fluid text-center">
+  <div class="form">
+    <h1> Log in </h1>
 
-  <%= form_for :session, url: login_path do |f| %>
+    <%= form_for :session, url: login_path do |f| %>
 
     <%= render partial: '/partials/errors' %>
 
@@ -19,5 +20,6 @@
       <%= f.submit "Login" %>
     </p>
 
-  <% end %>
+    <% end %>
+  </div>  
 </div>
