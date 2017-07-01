@@ -1,21 +1,26 @@
-<h1> Sell Stocks </h1>
-<div class="info">
-  <h2> <%= @stock_info['Name'] %> (<%= @stock_info['symbol'] %>) </h2> <br>
-  Purchase Price: <%= @stock.buy_price%> <br>
-  Bid Price: <%= @stock_info['Bid'] %> <br>
-  Num of Shares: <%= @stock.volume %>
+<div class="container-fluid text-center">
+  <div class="form">
+
+    <h1> Sell Stocks </h1>
+    <div class="info">
+      <h2> <%= @stock_info['Name'] %> (<%= @stock_info['symbol'] %>) </h2> <br>
+      Purchase Price: <%= @stock.buy_price%> <br>
+      Bid Price: <%= @stock_info['Bid'] %> <br>
+      Num of Shares: <%= @stock.volume %>
+    </div>
+
+    <%= form_for @stock, url: sell_path(@stock), method: :put do |f| %>
+      <p>
+        <%= f.label :volume %><br>
+        <%= f.number_field :volume %>
+      </p>
+
+      <p>
+        <%= f.submit "Sell Stock" %>
+      </p>
+    <% end %>
+
+    <%= link_to 'Back', portfolio_path(@stock.portfolio) %>
+
+  </div>
 </div>
-
-<%= form_for @stock, url: sell_path(@stock), method: :put do |f| %>
-
-  <p>
-    <%= f.label :volume %><br>
-    <%= f.number_field :volume %>
-  </p>
-
-  <p>
-    <%= f.submit "Sell Stock" %>
-  </p>
-<% end %>
-
-<%= link_to 'Back', portfolio_path(@stock.portfolio) %>

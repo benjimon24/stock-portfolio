@@ -1,27 +1,29 @@
-<h1> Buy Stock </h1>
-<div class="info">
-  <h2> <%= @stock_info['Name'] %> (<%= @stock_info['symbol'] %>) </h2> <br>
-  Ask Price: <%= @stock_info['Ask'] %>
+<div class="container-fluid text-center">
+  <div class="form">
+    <h1> Buy Stock </h1>
+    <h2> <%= @stock_info['Name'] %> (<%= @stock_info['symbol'] %>) </h2> <br>
+      Ask Price: <%= @stock_info['Ask'] %>
+
+    <%= form_for @stock, :url => buy_path(@stock_info['symbol']) do |f| %>
+      <p>
+        Portfolio: <br>
+        <%= f.select(:portfolio_id, @portfolios) %>
+      </p>
+
+      <p>
+        <%= f.label :volume %><br>
+        <%= f.number_field :volume %>
+      </p>
+
+      <%= f.hidden_field(:symbol, value: @stock_info['symbol']) %>
+      <%= f.hidden_field(:buy_price, value: @stock_info['Ask']) %>
+
+      <p>
+        <%= f.submit "Buy Stock" %>
+      </p>
+    <% end %>
+
+    <%= link_to 'Back', stock_path(@stock_info['symbol']) %>
+
+  </div>
 </div>
-
-  <%= form_for @stock, :url => buy_path(@stock_info['symbol']) do |f| %>
-
-    <p>
-      Portfolio: <br>
-      <%= f.select(:portfolio_id, @portfolios) %>
-    </p>
-
-    <p>
-      <%= f.label :volume %><br>
-      <%= f.number_field :volume %>
-    </p>
-
-    <%= f.hidden_field(:symbol, value: @stock_info['symbol']) %>
-    <%= f.hidden_field(:buy_price, value: @stock_info['Ask']) %>
-
-    <p>
-      <%= f.submit "Buy Stock" %>
-    </p>
-  <% end %>
-
-<%= link_to 'Back', stock_path(@stock_info['symbol']) %>

@@ -57,7 +57,7 @@ gem 'yahoo-finance'
 gem 'stock_quote'
 
 gem 'react-rails'
-# gem 'chartkick', '~> 2.2.2'
+gem 'chartkick', '~> 2.2.2'
 # gem 'groupdate', '~> 3.2.0'
 # gem 'active_median', '~> 0.1.4'
 #
