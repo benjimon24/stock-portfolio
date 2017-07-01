@@ -22,6 +22,8 @@ include UsersHelper
   end
 
   def show
+    @value_chart = @portfolio.stocks.inject({}){|hash, stock| hash[stock.symbol] = stock.current_value; hash}
+    @profit_chart = @portfolio.stocks.inject({}){|hash, stock| hash[stock.symbol] = (stock.net_profit > 0 ? stock.net_profit : 0); hash}
   end
 
   def edit
