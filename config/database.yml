@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: db574gqlmkib8b
-  username: fxurshawzcjqqp
-  password: c28562bdcae4be5eeb14e519793a5d6eb381ee9763e9cf0a6c7c4e6e0edf60a7
+  database: stock-portfolio_production
+  username: stock-portfolio
+  password: <%= ENV['STOCK-PORTFOLIO_DATABASE_PASSWORD'] %>
