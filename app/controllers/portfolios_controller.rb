@@ -9,6 +9,9 @@ include UsersHelper
 
   def new
     @portfolio = Portfolio.new
+    if request.xhr?
+      render partial: '/portfolios/new'
+    end
   end
 
   def create

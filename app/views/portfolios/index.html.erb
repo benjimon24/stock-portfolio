@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <%= button_to "New Portfolio", new_portfolio_path, method: 'get', class: "btn btn-primary new-portfolio" %>
+  <%= button_to "New Portfolio", new_portfolio_path, method: 'get', class: "btn btn-primary new-portfolio", form: {id: "new-portfolio-button"} %>
   <div class="row">
     <% @portfolios.each do |portfolio| %>
     <div class="col-sm-6 col-md-4">
