@@ -1,6 +1,6 @@
 # README
 
-This is a stock portfolio application created with Rails and React. For the live site, you may use username/password: holla@you // asdfasdf to view seed data.
+This is a stock portfolio application created with Rails and React. For the live site, you may use (username/password: holla@you // asdfasdf) to view seed data.
 
 * Ruby version: 2.3.1
 * BCrypt authentication
