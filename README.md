@@ -5,6 +5,7 @@ This is a stock portfolio application created with Rails and React. For the live
 * Ruby version: 2.3.1
 * BCrypt authentication
 * Uses stock_quote gem (with Yahoo! Finance API)
+* Uses stocksearchapi for search functionality (currently down, sorry!)
 * Uses chartkick gem
 
 User Stories:
