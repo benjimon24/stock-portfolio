@@ -38,8 +38,11 @@ class StocksController < ApplicationController
     redirect_to portfolio_path(@portfolio)
   end
 
+
   def search
-    @response = parse(params[:id])
+    redirect_to stock_path(params[:id])
+  # this part no longer works because stock search api is broken
+  # @response = parse(params[:id])
   end
 
   def show
