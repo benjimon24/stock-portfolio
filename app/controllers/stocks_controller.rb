@@ -6,7 +6,7 @@ class StocksController < ApplicationController
 
   def new
     @stock = Stock.new
-    @stock_info = StockQuote::Stock.json_quote(params[:id])["quote"]
+    @stock_info = StockQuote::Stock.json_quote(params[:id])
     @portfolios = current_user.portfolios.map {|portfolio| [portfolio.name, portfolio.id]}
     redirect_to stock_path(@stock_info['symbol']) if @portfolios.empty?
   end
@@ -28,7 +28,7 @@ class StocksController < ApplicationController
     @stock = Stock.find(params[:id])
     @portfolio = @stock.portfolio
     redirect_to root_path unless session[:user_id] == @portfolio.user_id
-    @stock_info = StockQuote::Stock.json_quote(@stock.symbol)["quote"]
+    @stock_info = StockQuote::Stock.json_quote(@stock.symbol)
   end
 
   def update
@@ -43,8 +43,8 @@ class StocksController < ApplicationController
   end
 
   def show
-    @stock = StockQuote::Stock.json_quote(params[:id])["quote"]
-    @stock = nil unless @stock['Name']
+    @stock = StockQuote::Stock.json_quote(params[:id])
+    @stock = nil unless @stock['name']
     @portfolios = portfolios_with(params[:id])
   end
 

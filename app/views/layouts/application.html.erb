@@ -32,9 +32,9 @@
             <%= link_to "Sign Up", new_user_path, class: "nav-link" %>
           <% end %>
         </div>
-        <%= form_tag(search_path, method: "post", class: "search-form form-inline my-2 my-lg-0") do %>
+        <%= form_tag(stock_path(:id), method: "get", class: "search-form form-inline my-2 my-lg-0") do %>
           <%= text_field_tag(:id, nil, placeholder: "Search by Ticker", class: "search-bar form-control mr-sm-2")  %>
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <%= submit_tag "Search", class: "btn btn-outline-success my-2 my-sm-0" %>
         <% end %>
       </div>
     </nav>

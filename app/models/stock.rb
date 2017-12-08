@@ -3,7 +3,7 @@ class Stock < ApplicationRecord
   belongs_to :portfolio
 
   def current_price
-    StockQuote::Stock.json_quote(self.symbol)["quote"]["Ask"].to_f
+    StockQuote::Stock.json_quote(self.symbol)["l"].delete(',').to_f
   end
 
   def current_value
@@ -30,7 +30,7 @@ class Stock < ApplicationRecord
   end
 
   def sell(quantity)
-    if (volume - quantity) < 0
+    if (volume - quantity) <= 0
       self.destroy
     else
       self.volume -= quantity

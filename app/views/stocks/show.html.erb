@@ -9,39 +9,35 @@
         <tbody>
           <tr>
             <td>Open:</td>
-            <td>$<%= @stock['Open'] %></td>
+            <td>$<%= @stock['op'] %></td>
           </tr>
           <tr>
-            <td>Ask Price:</td>
-            <td>$<%= @stock['Ask'] %></td>
-          </tr>
-          <tr>
-            <td>Bid Price:</td>
-            <td>$<%= @stock['Bid'] %></td>
+            <td>Price:</td>
+            <td>$<%= @stock['l'] %></td>
           </tr>
           <tr>
             <td>Days Low:</td>
-            <td>$<%= @stock['DaysLow'] %>%</td>
+            <td>$<%= @stock['lo'] %>%</td>
           </tr>
           <tr>
             <td>Days High:</td>
-            <td>$<%= @stock['DaysHigh'] %>%</td>
+            <td>$<%= @stock['hi'] %>%</td>
           </tr>
           <tr>
             <td>Year Low:</td>
-            <td>$<%= @stock['YearLow'] %>%</td>
+            <td>$<%= @stock['lo52'] %>%</td>
           </tr>
           <tr>
             <td>Year High:</td>
-            <td>$<%= @stock['YearHigh'] %>%</td>
+            <td>$<%= @stock['hi52'] %>%</td>
           </tr>
           <tr>
             <td>Change:</td>
-            <td><%= @stock['Change']%></td>
+            <td><%= @stock['c']%></td>
           </tr>
           <tr>
             <td>Change%:</td>
-            <td class="percent-change"><%= @stock['PercentChange']%></td>
+            <td class="percent-change"><%= @stock['cp']%></td>
           </tr>
         </tbody>
       </table>

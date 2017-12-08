@@ -2,7 +2,7 @@
   <div class="form">
     <h1> Buy Stock </h1>
     <h2> <%= @stock_info['Name'] %> (<%= @stock_info['symbol'] %>) </h2> <br>
-      Ask Price: <%= @stock_info['Ask'] %>
+      Price: <%= @stock_info['l'] %>
 
     <%= form_for @stock, :url => buy_path(@stock_info['symbol']) do |f| %>
       <p>
@@ -16,7 +16,7 @@
       </p>
 
       <%= f.hidden_field(:symbol, value: @stock_info['symbol']) %>
-      <%= f.hidden_field(:buy_price, value: @stock_info['Ask']) %>
+      <%= f.hidden_field(:buy_price, value: @stock_info['l'].delete(',')) %>
 
       <p>
         <%= f.submit "Buy Stock" %>
