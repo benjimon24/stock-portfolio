@@ -1,9 +1,11 @@
 # README
 
-This is a stock portfolio application created with Rails and React.
+This is a stock portfolio application created with Rails and React. For the live site, you may use (username/password: holla@you // asdfasdf) to view seed data.
+
 * Ruby version: 2.3.1
 * BCrypt authentication
 * Uses stock_quote gem (with Yahoo! Finance API)
+* Uses stocksearchapi for search functionality (currently down, sorry!)
 * Uses chartkick gem
 
 User Stories:
