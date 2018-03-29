@@ -1,7 +1,11 @@
-# README
+# Stock-Portfolio
+
+---
 
 ## Update
 As of March 17th 2018, the stock_quote gem no longer uses the Google Finance API, as Google has terminated public access to its API. Thus, this app is no longer working until further notice.
+
+---
 
 This is a stock portfolio application created with Rails and React. For the live site, you may use (username/password: holla@you // asdfasdf) to view seed data.
 
