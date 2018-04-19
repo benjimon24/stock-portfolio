@@ -11,7 +11,7 @@ This is a stock portfolio application created with Rails and React. For the live
 
 * Ruby version: 2.3.1
 * BCrypt authentication
-* Uses stock_quote gem (with Google Finance API)
+* Uses [stock_quote gem](https://github.com/tyrauber/stock_quote) (with Google Finance API)
 * Uses stocksearchapi for search functionality (currently down, sorry!)
 * Uses chartkick gem
 
