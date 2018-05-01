@@ -3,7 +3,7 @@ class Stock < ApplicationRecord
   belongs_to :portfolio
 
   def current_price
-    StockQuote::Stock.json_quote(self.symbol)["l"].delete(',').to_f
+    StockQuote::Stock.quote(self.symbol).latest_price #.delete(',').to_f
   end
 
   def current_value

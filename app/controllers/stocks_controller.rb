@@ -46,8 +46,8 @@ class StocksController < ApplicationController
   end
 
   def show
-    @stock = StockQuote::Stock.json_quote(params[:id])
-    @stock = nil unless @stock['name']
+    @stock = StockQuote::Stock.quote(params[:id])
+    @stock = nil unless @stock.company_name
     @portfolios = portfolios_with(params[:id])
   end
 
