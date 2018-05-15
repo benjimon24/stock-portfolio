@@ -54,7 +54,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # gem 'yahoo-finance'
-gem 'stock_quote', '~> 1.5.0'
+gem 'stock_quote', '~> 2.0.0'
 
 gem 'react-rails'
 gem 'chartkick', '~> 2.2.2'
